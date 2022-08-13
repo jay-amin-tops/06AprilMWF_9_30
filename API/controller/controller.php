@@ -26,6 +26,15 @@ class Controller extends model
                             }
                             echo json_encode($Data);
                             break;
+                        case '/getalltodo':
+                            if ($request_method == "GET") {
+                                $Data = $this->select("todo");
+                            } else {
+                                header("HTTP/1.0 405 Method Not Allowed");
+                                $Data = array("Code" => 0, "Data" => 0, "Msg" => "Invalid Method");
+                            }
+                            echo json_encode($Data);
+                            break;
                         case '/add_todo_data':
                             if ($request_method == "POST") {
                                 if (isset($_POST['todo_title'])) {

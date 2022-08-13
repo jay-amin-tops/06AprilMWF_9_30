@@ -37,6 +37,12 @@
 
     <!-- Template Stylesheet -->
     <link href="<?php echo $this->baseURL;?>admin/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        .txt-bg-light{
+            background-color: #e9ecef !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -73,6 +79,13 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="addnewuser" class="dropdown-item">Add New User</a>
                             <a href="viewallusers" class="dropdown-item">View all Users</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-users me-2"></i>Todo list Ajax</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <!-- <a href="addnewtask" class="dropdown-item">Add task</a> -->
+                            <a href="viewalltask" class="dropdown-item">View all Task</a>
                         </div>
                     </div>
                   

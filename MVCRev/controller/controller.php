@@ -95,6 +95,11 @@ class Controller extends model
                     require_once('views/admin/footer.php');
                     
                     break;
+                case '/viewalltask':
+                    require_once('views/admin/header.php');
+                    require_once('views/admin/viewalltask.php');
+                    require_once('views/admin/footer.php');
+                    break;    
                 case '/logout':
                     session_destroy();
                     header("location:home");
