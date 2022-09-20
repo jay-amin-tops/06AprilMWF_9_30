@@ -4,8 +4,7 @@ session_start();
 class Controller extends model
 {
     public $baseURL =""; 
-    public function __construct()
-    {
+    public function __construct() {
         $ReqURI = explode("/",$_SERVER['REQUEST_URI']);
         $this->baseURL =$_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/".$ReqURI[1]."/".$ReqURI[2]."/".$ReqURI[3]."/".$ReqURI[4]."/".$ReqURI[5]."/assets/"; 
         ob_start();

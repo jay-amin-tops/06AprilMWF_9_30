@@ -36,10 +36,22 @@ class Controller extends model
                             echo json_encode($Data);
                             break;
                         case '/add_todo_data':
+                            // echo "add_todo_data called";
                             if ($request_method == "POST") {
-                                if (isset($_POST['todo_title'])) {
-                                    $DataForInsert = array("todo_title"=>$_POST['todo_title'],"status"=>"Pending");
-                                    $Data = $this->insert("todo", $DataForInsert);            
+                                // echo "add_todo_data inside post";
+                                // echo "<pre>";
+                                // print_r($_REQUEST);
+                                if (isset($_POST['FormData']['todo_title'])) {
+                                    // echo "add_todo_data get title";
+                                    $DataForInsert = array("todo_title"=>$_POST['FormData']['todo_title'],"status"=>$_POST['FormData']['status']);
+                                    $InsertData = $this->insert("todo", $DataForInsert);            
+                                    if ($InsertData["Code"]==1 ) {
+                                        # code...
+                                        $Data = $this->select("todo");            
+                                    }else{
+                                        $Data = array("Code" => 0, "Data" => 0, "Msg" => "Error while inserting");
+                                        
+                                    }
                                 }else{
                                     $Data = array("Code" => 0, "Data" => 0, "Msg" => "todo title is required");
                                 }
@@ -49,7 +61,37 @@ class Controller extends model
                             }
                             echo json_encode($Data);
                             break;
-                       
+                        case '/delete_todo_data':
+                            if ($request_method == "POST") {
+                                $DeleteData = $this->delete("todo",array("id"=>$_POST['id']));
+                                if ($DeleteData["Code"]==1 ) {
+                                    $Data = $this->select("todo");            
+                                }else{
+                                    $Data = array("Code" => 0, "Data" => 0, "Msg" => "Error while inserting");
+                                    
+                                }
+                            } else {
+                                header("HTTP/1.0 405 Method Not Allowed");
+                                $Data = array("Code" => 0, "Data" => 0, "Msg" => "Invalid Method");
+                            }
+                            echo json_encode($Data);
+                            break;
+                        case '/update_todo_data':
+                            if ($request_method == "POST") {
+                                $UpdateData = $this->update("todo",array("status"=>$_POST['status']),array("id"=>$_POST['id']));
+                                if ($UpdateData["Code"]==1 ) {
+                                    $Data = $this->select("todo");            
+                                }else{
+                                    $Data = array("Code" => 0, "Data" => 0, "Msg" => "Error while inserting");
+                                    
+                                }
+                            } else {
+                                header("HTTP/1.0 405 Method Not Allowed");
+                                $Data = array("Code" => 0, "Data" => 0, "Msg" => "Invalid Method");
+                            }
+                            echo json_encode($Data);
+                            break;
+    
         
                         default:
                             # code...
