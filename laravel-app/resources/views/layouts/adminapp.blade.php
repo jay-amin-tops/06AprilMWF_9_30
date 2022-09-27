@@ -81,9 +81,25 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						<ul class="sidebar-menu">
 							<li class="header">MAIN NAVIGATION</li>
 							<li class="treeview">
-								<a href="index.html">
+								<a href="http://localhost:8000/admin">
 									<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 								</a>
+							</li>
+							<li class="treeview">
+								<a href="http://localhost:8000/bladetemplate">
+									<i class="fa fa-dashboard"></i> <span>BladeTemplate</span>
+								</a>
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="fa fa-book"></i>
+									<span>Books</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href="viewallbooks"><i class="fa fa-angle-right"></i> All Books</a></li>
+									<li><a href="addbooks"><i class="fa fa-angle-right"></i> Add New</a></li>
+								</ul>
 							</li>
 							<li class="treeview">
 								<a href="#">

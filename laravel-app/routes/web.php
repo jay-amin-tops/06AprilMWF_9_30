@@ -21,3 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/admin','admin/dashboard' )->name('admin');
+// Route::view('/bladetemplate','admin/bladeTemplate' );
+// Route::get('/bladetemplate',function (){
+//     return view('admin/bladeTemplate', ['name' => 'Aayushi']); 
+// });
+Route::get('/bladetemplate',function (){
+    return view('admin/bladeTemplate', ['data' => ['Aayushi',"Laravel Developer"]]); 
+});
+Route::get('/viewallbooks',[App\Http\Controllers\BooksController::class, 'index']);

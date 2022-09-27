@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Books;
+use App\Models\category;
 use Illuminate\Http\Request;
 
-class BooksController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Books $books)
+    public function index()
     {
-        $allBooksData = $books->all();
-        dd($allBooksData);
+        //
     }
 
     /**
@@ -36,32 +35,27 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        echo "called store";
-        exit;
-        // dd("called store");
         //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Books $books)
+    public function show(category $category)
     {
-        echo "called Books show";
-        exit;
         //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Books $books)
+    public function edit(category $category)
     {
         //
     }
@@ -70,10 +64,10 @@ class BooksController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Books $books)
+    public function update(Request $request, category $category)
     {
         //
     }
@@ -81,10 +75,10 @@ class BooksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Books $books)
+    public function destroy(category $category)
     {
         //
     }
